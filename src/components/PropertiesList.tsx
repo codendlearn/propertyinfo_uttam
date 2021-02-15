@@ -1,9 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import PropertyListing from './PropertyListing'
 import pic4 from '../images/pic04.jpg'
-import pic5 from '../images/pic05.jpg'
-import pic6 from '../images/pic06.jpg'
-import pic7 from '../images/pic07.jpg'
 import {allPropertiesApi, ApiEndpoint} from '../Constants'
 import {get} from '../utils/FetchUtils'
 
@@ -31,6 +28,7 @@ const PropertiesList = () => {
     useEffect(() => {
         let apiUrl = `${ApiEndpoint}${allPropertiesApi}`
         setError(null)
+        console.log(error)
         get<IProperty[]>(apiUrl)
             .then(data => {
                 console.log(data)
@@ -40,7 +38,7 @@ const PropertiesList = () => {
                 console.error(err)
                 setError(err)
             })
-    }, [])
+    })
     return (
         <section id="four" className="wrapper alt style1">
             <div className="inner">
@@ -61,7 +59,7 @@ const PropertiesList = () => {
                     }
                 </section>
                 <ul className="actions">
-                    <li><a href="#" className="button">Browse All</a></li>
+                    <li><a href="/#" className="button">Browse All</a></li>
                 </ul>
             </div>
         </section>

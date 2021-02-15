@@ -33,12 +33,12 @@ const Footer = () => {
     const handleSubmit = (a: FormEvent<HTMLFormElement>) => {
         a.preventDefault()
         setsubmitted(false)
-
+        console.log(submitted)
         if (!state) {
             return
         }
 
-        let apiUrl = `${" http://localhost:7071/api/enquiry"}${sendEnquiryApi}`
+        let apiUrl = `${ApiEndpoint}${sendEnquiryApi}`
         post<IPropertyEnquiry, {value: string}>(apiUrl, state)
             .then(data => {
                 setsubmitted(true)
@@ -94,13 +94,13 @@ const Footer = () => {
                         <a href="mailto:contactus@propertyinfo.com?Subject=Enqyiry">contactus@propertyinfo.com</a>
                     </li>
                     <li className="icon brands fa-twitter">
-                        <a href="#">twitter.com/untitled-tld</a>
+                        twitter.com/untitled-tld
                     </li>
                     <li className="icon brands fa-facebook-f">
-                        <a href="#">facebook.com/untitled-tld</a>
+                        facebook.com/untitled-tld
                     </li>
                     <li className="icon brands fa-instagram">
-                        <a href="#">instagram.com/untitled-tld</a>
+                        instagram.com/untitled-tld
                     </li>
                 </ul>
                 <ul className="copyright">

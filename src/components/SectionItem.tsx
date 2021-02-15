@@ -18,7 +18,7 @@ export const SectionItem = (props: SectionItemProps) => {
                     <p>
                         {props.description}
                     </p>
-                    <a href="#" className="special">Learn more</a>
+                    <a href="/#" className="special">Learn more</a>
                 </div>
             </div>
         </section>)
