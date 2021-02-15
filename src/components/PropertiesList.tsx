@@ -38,7 +38,7 @@ const PropertiesList = () => {
                 console.error(err)
                 setError(err)
             })
-    })
+    }, [error])
     return (
         <section id="four" className="wrapper alt style1">
             <div className="inner">
